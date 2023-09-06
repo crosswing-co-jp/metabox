@@ -17,6 +17,7 @@
   "chat-sidebar.system-message.leave": "{name} が退室しました。",
   "chat-sidebar.system-message.name-change": "名前が {oldName} から {newName} に変更されました",
   "chat-sidebar.system-message.scene-change": "シーンが {name} から {sceneName} に変更されました",
+  "content-menu.custom-switch-person-view-button": "3人称視点切り替え",
   "close-room-modal.confirm": "はい,部屋を閉じます",
   "close-room-modal.message":
     "この部屋を閉じると,自分や他の人が部屋から削除され,完全にシャットダウンされます。{linebreak}よろしいですか？この操作は元に戻せません。",
@@ -124,6 +125,7 @@
   "preferences-screen.preference.enable-on-screen-joystick-left":
     "画面上の左側のジョイスティックで移動できるようにする",
   "preferences-screen.preference.enable-on-screen-joystick-right": "画面上の右のジョイスティックで見回せるようにする",
+  "preferences-screen.preference.enable-third-person-view": "３人称視点の切り替え",
   "preferences-screen.preference.global-media-volume": "メディアボリューム",
   "preferences-screen.preference.global-voice-volume": "着信音声ボリューム",
   "preferences-screen.preference.invert-touchscreen-camera-move": "タッチスクリーンのカメラ移動の方向を反転",
