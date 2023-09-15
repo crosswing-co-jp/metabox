@@ -1,7 +1,9 @@
 import { addMedia } from "../utils/media-utils";
+import { getCurrentHubId } from "../utils/hub-utils";
 import { ObjectContentOrigins } from "../object-types";
 import { Held, HeldHandLeft, HeldHandRight, HeldRemoteLeft, HeldRemoteRight } from "../bit-components";
 import { addComponent } from "bitecs";
+import axios from "axios";
 
 // WARNING: This system mutates interaction system state!
 export class SuperSpawnerSystem {
@@ -15,14 +17,58 @@ export class SuperSpawnerSystem {
         ? window.APP.hubChannel.can("spawn_emoji")
         : window.APP.hubChannel.can("spawn_and_move_media"));
 
+    let isScriptTrigger = false;
+    if (superSpawner) {
+      if (state.hovered.object3D.name.indexOf('script') !== -1) {
+        isScriptTrigger = true;
+      }
+    }
+
     if (
       superSpawner &&
       superSpawner.spawnedMediaScale &&
       !superSpawner.cooldownTimeout &&
       userinput.get(grabPath) &&
-      isPermitted
+      isPermitted &&
+      !isScriptTrigger
     ) {
       this.performSpawn(state, superSpawner, HeldComponent);
+    } else if (
+      superSpawner &&
+      superSpawner.spawnedMediaScale &&
+      !superSpawner.cooldownTimeout &&
+      userinput.get(grabPath) &&
+      isPermitted &&
+      isScriptTrigger
+      ) {
+      if (state.hovered.object3D.name.indexOf('call_bell') !== -1) {
+        const confirm = window.confirm(
+          "呼び鈴でルームのオーナーを呼び出すことができます。\nオーナーを呼び出しますか？"
+        );
+        if (confirm) {
+          const roomId = getCurrentHubId();
+          axios
+            .post(
+              // TODO: 本番リリース時に検証環境のURLをコメントしておき、本番環境のURLに変更する
+              `https://h058waxc3b.execute-api.ap-northeast-1.amazonaws.com/v1/rooms/${roomId}/call_bell`,
+              {},
+              {
+                headers: {
+                  "Content-Type": "application/json"
+                }
+              }
+            )
+            .then(response => {
+              console.log(response);
+              window.alert("呼び出しが完了しました。しばらくお待ちください。");
+            })
+            .catch(error => {
+              console.log(error);
+            });
+        } else {
+          window.alert("呼び出しをキャンセルしました。");
+        }
+      }
     }
   }
 
