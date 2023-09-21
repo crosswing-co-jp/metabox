@@ -49,8 +49,10 @@ export class SuperSpawnerSystem {
           const roomId = getCurrentHubId();
           axios
             .post(
-              // TODO: 本番リリース時に検証環境のURLをコメントしておき、本番環境のURLに変更する
-              `https://h058waxc3b.execute-api.ap-northeast-1.amazonaws.com/v1/rooms/${roomId}/call_bell`,
+              // 検証環境 dev-metaboxvr-doujinvoicevr.com
+              // `https://h058waxc3b.execute-api.ap-northeast-1.amazonaws.com/v1/rooms/${roomId}/call_bell`,
+              // 本番環境 metaboxvr.com
+              `https://z3x09h44qi.execute-api.ap-northeast-1.amazonaws.com/v1/rooms/${roomId}/call_bell`,
               {},
               {
                 headers: {
