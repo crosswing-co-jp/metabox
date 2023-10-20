@@ -10,7 +10,7 @@
 
   label {
     cursor: pointer;
-    color: theme.$text1-color;
+    color: theme.$white;
     margin-top: 8px;
     margin-bottom: 3px;
     white-space: nowrap;
@@ -51,7 +51,7 @@
 :local(.basic), :local(.transparent) {
   :local(.icon-container) {
     border-color: theme.$toolbar-basic-border-color;
-    background-color: transparent;
+    background-color: theme.$white;
     svg {
       color: theme.$toolbar-basic-icon-color;
     }
@@ -69,8 +69,8 @@
 
   &:local(.selected) {
     :local(.icon-container) {
-      border-color: transparent;
-      background-color: theme.$toolbar-icon-selected-bg;
+      border-color: theme.$white;
+      background-color: theme.$white;
     }
     svg {
       color: theme.$toolbar-basic-selected-icon-color;
@@ -201,24 +201,36 @@
 
 :local(.cancel) {
   :local(.icon-container) {
-    background-color: theme.$cancel-color;
+    background-color: theme.$white;
+
+    svg {
+      color: theme.$cancel-color;
+  
+      *[stroke=\#000] {
+        transition: stroke 0.1s ease-in-out;
+      }
+  
+      *[fill=\#000] {
+        transition: fill 0.1s ease-in-out;
+      }
+    }
   }  
 
   &:hover :local(.icon-container) {
-    background-color: theme.$cancel-color-hover;
+    background-color: theme.$basic-color-hover;
   }
 
   &:active :local(.icon-container) {
-    background-color: theme.$cancel-color-pressed;
+    background-color: theme.$cancel-color;
   }
 
   &:local(.selected) {
     :local(.icon-container) {
       border-color: theme.$cancel-color;
-      background-color: theme.$toolbar-icon-selected-bg;
+      background-color: theme.$cancel-color;
 
       svg {
-        color: theme.$cancel-color;
+        color: theme.$white;
       }
     }
 
@@ -228,10 +240,10 @@
 
     &:hover {
       :local(.icon-container) {
-        border-color: theme.$cancel-color-hover;
+        border-color: theme.$white;
 
         svg {
-          color: theme.$cancel-color-hover;
+          color: theme.$white;
         }
       }
     }
@@ -250,25 +262,37 @@
 
 :local(.accent1) {
   :local(.icon-container) {
-    background-color: theme.$accent1-color;
-    border-color: theme.$accent1-border-color;
+    background-color: theme.$white;
+    border-color: theme.$white;
+
+    svg {
+      color: theme.$accent1-color;
+  
+      *[stroke=\#000] {
+        transition: stroke 0.1s ease-in-out;
+      }
+  
+      *[fill=\#000] {
+        transition: fill 0.1s ease-in-out;
+      }
+    }
   }  
 
   &:hover :local(.icon-container) {
-    background-color: theme.$accent1-color-hover;
+    background-color: theme.$basic-color-hover;
   }
 
   &:active :local(.icon-container) {
-    background-color: theme.$accent1-color-pressed;
+    background-color: theme.$accent1-color;
   }
 
   &:local(.selected) {
     :local(.icon-container) {
-      border-color: theme.$accent1-color;
-      background-color: theme.$toolbar-icon-selected-bg;
+      border-color: theme.$white;
+      background-color: theme.$accent1-color;
 
       svg {
-        color: theme.$accent1-color;
+        color: theme.$white;
       }
     }
 
@@ -278,10 +302,10 @@
 
     &:hover {
       :local(.icon-container) {
-        border-color: theme.$accent1-color-hover;
+        border-color: theme.$white;
 
         svg {
-          color: theme.$accent1-color-hover;
+          color: theme.$white;
         }
       }
     }
@@ -300,25 +324,37 @@
 
 :local(.accent2) {
   :local(.icon-container) {
-    background-color: theme.$accent2-color;
-    border-color: theme.$accent2-border-color;
+    background-color: theme.$white;
+    border-color: theme.$white;
+
+    svg {
+      color: theme.$accent2-color;
+  
+      *[stroke=\#000] {
+        transition: stroke 0.1s ease-in-out;
+      }
+  
+      *[fill=\#000] {
+        transition: fill 0.1s ease-in-out;
+      }
+    }
   }  
 
   &:hover :local(.icon-container) {
-    background-color: theme.$accent2-color-hover;
+    background-color: theme.$basic-color-hover;
   }
 
   &:active :local(.icon-container) {
-    background-color: theme.$accent2-color-pressed;
+    background-color: theme.$accent2-color;
   }
 
   &:local(.selected) {
     :local(.icon-container) {
       border-color: theme.$accent2-color;
-      background-color: theme.$toolbar-icon-selected-bg;
+      background-color: theme.$accent2-color;
 
       svg {
-        color: theme.$accent2-color;
+        color: theme.$white;
       }
     }
 
@@ -328,10 +364,10 @@
 
     &:hover {
       :local(.icon-container) {
-        border-color: theme.$accent2-color-hover;
+        border-color: theme.$white;
 
         svg {
-          color: theme.$accent2-color-hover;
+          color: theme.$white;
         }
       }
     }
@@ -350,25 +386,37 @@
 
 :local(.accent3) {
   :local(.icon-container) {
-    background-color: theme.$accent3-color;
-    border-color: theme.$accent3-border-color;
+    background-color: theme.$white;
+    border-color: theme.$white;
+
+    svg {
+      color: theme.$accent3-color;
+  
+      *[stroke=\#000] {
+        transition: stroke 0.1s ease-in-out;
+      }
+  
+      *[fill=\#000] {
+        transition: fill 0.1s ease-in-out;
+      }
+    }
   }  
 
   &:hover :local(.icon-container) {
-    background-color: theme.$accent3-color-hover;
+    background-color: theme.$basic-color-hover;
   }
 
   &:active :local(.icon-container) {
-    background-color: theme.$accent3-color-pressed;
+    background-color: theme.$accent3-color;
   }
 
   &:local(.selected) {
     :local(.icon-container) {
       border-color: theme.$accent3-color;
-      background-color: theme.$toolbar-icon-selected-bg;
+      background-color: theme.$accent3-color;
 
       svg {
-        color: theme.$accent3-color;
+        color: theme.$white;
          }
     }
 
@@ -378,10 +426,10 @@
 
     &:hover {
       :local(.icon-container) {
-        border-color: theme.$accent3-color-hover;
+        border-color: theme.$white;
 
         svg {
-          color: theme.$accent3-color-hover;
+          color: theme.$white;
         }
       }
     }
@@ -400,25 +448,37 @@
 
 :local(.accent4) {
   :local(.icon-container) {
-    background-color: theme.$accent4-color;
-    border-color: theme.$accent4-border-color;
+    background-color: theme.$white;
+    border-color: theme.$white;
+
+    svg {
+      color: theme.$accent4-color;
+  
+      *[stroke=\#000] {
+        transition: stroke 0.1s ease-in-out;
+      }
+  
+      *[fill=\#000] {
+        transition: fill 0.1s ease-in-out;
+      }
+    }
   }
 
   &:hover :local(.icon-container) {
-    background-color: theme.$accent4-color-hover;
+    background-color: theme.$basic-color-hover;
   }
 
   &:active :local(.icon-container) {
-    background-color: theme.$accent4-color-pressed;
+    background-color: theme.$accent4-color;
   }
 
   &:local(.selected) {
     :local(.icon-container) {
-      border-color: theme.$accent4-color;
-      background-color: theme.$toolbar-icon-selected-bg;
+      border-color: theme.$white;
+      background-color: theme.$accent4-color;
 
       svg {
-        color: theme.$accent4-color;
+        color: theme.$white;
       }
     }
 
@@ -428,10 +488,10 @@
 
     &:hover {
       :local(.icon-container) {
-        border-color: theme.$accent4-color-hover;
+        border-color: theme.$white;
 
         svg {
-          color: theme.$accent4-color-hover;
+          color: theme.$white;
         }
       }
     }
@@ -450,25 +510,37 @@
 
 :local(.accent5) {
   :local(.icon-container) {
-    background-color: theme.$accent5-color;
-    border-color: theme.$accent5-border-color;
+    background-color: theme.$white;
+    border-color: theme.$white;
+
+    svg {
+      color: theme.$accent5-color;
+  
+      *[stroke=\#000] {
+        transition: stroke 0.1s ease-in-out;
+      }
+  
+      *[fill=\#000] {
+        transition: fill 0.1s ease-in-out;
+      }
+    }
   }  
 
   &:hover :local(.icon-container) {
-    background-color: theme.$accent5-color-hover;
+    background-color: theme.$basic-color-hover;
   }
 
   &:active :local(.icon-container) {
-    background-color: theme.$accent5-color-pressed;
+    background-color: theme.$accent5-color;
   }
 
   &:local(.selected) {
     :local(.icon-container) {
       border-color: theme.$accent5-color;
-      background-color: theme.$toolbar-icon-selected-bg;
+      background-color: theme.$accent5-color;
 
       svg {
-        color: theme.$accent5-color;
+        color: theme.$white;
       }
     }
 
@@ -478,10 +550,10 @@
 
     &:hover {
       :local(.icon-container) {
-        border-color: theme.$accent5-color-hover;
+        border-color: theme.$white;
 
         svg {
-          color: theme.$accent5-color-hover;
+          color: theme.$white;
         }
       }
     }

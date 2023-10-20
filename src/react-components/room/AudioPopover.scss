@@ -27,7 +27,7 @@
 
   width: 24px;
   height: 24px;
-  color: theme.$text1-color;
+  color: theme.$white;
 }
 
 :local(.icon-disabled) {
@@ -37,7 +37,7 @@
 
   width: 24px;
   height: 24px;
-  color: theme.$text2-color;
+  color: theme.$white;
 }
 
 :local(.arrow-button) {
@@ -55,4 +55,8 @@
 :local(.level-bar) {
   width: 100%;
   height: 24px;
+}
+
+:local(.inputLabel) {
+  color: theme.$white;
 }
