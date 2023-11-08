@@ -31,7 +31,6 @@ import EntryStartPanel from "./entry-start-panel.js";
 import AvatarEditor from "./avatar-editor";
 import PreferencesScreen from "./preferences-screen.js";
 import PresenceLog from "./presence-log.js";
-import { CustomSwitchPersonViewButton } from "./custom-switch-person-view-button.js";
 import PreloadOverlay from "./preload-overlay.js";
 import RTCDebugPanel from "./debug-panel/RtcDebugPanel.js";
 import { showFullScreenIfAvailable, showFullScreenIfWasFullScreen } from "../utils/fullscreen";
@@ -81,6 +80,7 @@ import { AudioPopoverContainer } from "./room/AudioPopoverContainer";
 import { ReactionPopoverContainer } from "./room/ReactionPopoverContainer";
 import { CameraButtonContainer } from "./room/CameraButtonContainer";
 import { AvatarButtonContainer } from "./room/AvatarButtonContainer";
+import { ToggleTpsButtonContainer } from "./room/ToggleTpsButtonContainer";
 import { SafariMicModal } from "./room/SafariMicModal";
 import { RoomSignInModalContainer } from "./auth/RoomSignInModalContainer";
 import { SignInStep } from "./auth/SignInModal";
@@ -1074,8 +1074,6 @@ class UIRoot extends Component {
 
     const streaming = this.state.isStreaming;
 
-    const showObjectList = enteredOrWatching;
-
     const streamer = getCurrentStreamer();
     const streamerName = streamer && streamer.displayName;
 
@@ -1364,9 +1362,6 @@ class UIRoot extends Component {
                           onClick={() => this.toggleSidebar("people")}
                           presencecount={this.state.presenceCount}
                         />
-                        {showObjectList && (
-                          <CustomSwitchPersonViewButton store={this.props.store} scene={this.props.scene} />
-                        )}
                       </ContentMenu>
                     )}
                     {!entered && !streaming && !isMobile && streamerName && <SpectatingLabel name={streamerName} />}
@@ -1569,6 +1564,7 @@ class UIRoot extends Component {
                         {this.props.hubChannel.can("spawn_and_move_media") && (
                           <AvatarButtonContainer mediaSearchStore={this.props.mediaSearchStore} />
                         )}
+                        <ToggleTpsButtonContainer store={this.props.store} scene={this.props.scene} />
                       </>
                     )}
                     {entered &&
