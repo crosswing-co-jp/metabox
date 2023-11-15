@@ -8,6 +8,10 @@
   align-items: center;
   width: 48px;
 
+  @media (max-width: theme.$breakpoint-sm) {
+    padding: 0px 15px;
+  }
+
   label {
     cursor: pointer;
     color: theme.$white;
