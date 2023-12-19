@@ -29,7 +29,7 @@ export const AudioPopoverContent = ({
   const iconStyle = isMicrophoneEnabled ? styles.iconEnabled : styles.iconDisabled;
   return (
     <Column padding grow gap="lg" className={styles.audioToolbarPopover}>
-      <p style={{ alignSelf: "start" }}>
+      <p className={styles.inputLabel} style={{ alignSelf: "start" }}>
         <FormattedMessage id="mic-setup-modal.microphone-text" defaultMessage="Microphone" />
       </p>
       {isAudioInputSelectAvailable && (
@@ -53,10 +53,11 @@ export const AudioPopoverContent = ({
           label={<FormattedMessage id="mic-setup-modal.mute-mic-toggle-v2" defaultMessage="Mute" />}
           checked={isMicrophoneMuted}
           onChange={onChangeMicrophoneMuted}
+          labelClassName={styles.inputLabel}
         />
       </Row>
       <Divider />
-      <p style={{ alignSelf: "start" }}>
+      <p className={styles.inputLabel} style={{ alignSelf: "start" }}>
         <FormattedMessage id="mic-setup-modal.speakers-text" defaultMessage="Speakers" />
       </p>
       {isAudioOutputSelectAvailable && (
