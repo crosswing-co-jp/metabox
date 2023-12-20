@@ -13,6 +13,14 @@
   }
 }
 
+:local(.customToolbar) {
+  @media (max-width: theme.$breakpoint-sm) {
+    position: relative;
+    overflow-y: hidden;
+    padding: 12px 0px;
+  }
+}
+
 :local(.content) {
   display: flex;
   flex: 1;
@@ -31,11 +39,22 @@
   }
 }
 
+:local(.centerContent) {
+  @media (max-width: theme.$breakpoint-sm) {
+    position: absolute;
+    width: 570px;
+    padding: 0px 15px;
+  }
+}
+
 :local(.starWrapper) {
   position: absolute;
   height: 96px;
   width: 100%;
-  overflow: hidden;
+
+  @media (min-width: theme.$breakpoint-lg) {
+    overflow: hidden;
+  }
 }
 
 // n is number of stars required
