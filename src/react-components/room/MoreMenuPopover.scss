@@ -13,7 +13,7 @@
   margin-left: 16px;
   font-size: theme.$font-size-xs;
   font-weight: theme.$font-weight-bold;
-  color: theme.$text3-color;
+  color: theme.$white;
 }
 
 :local(.more-menu-item-list) {
@@ -41,11 +41,11 @@
 
   svg {
     *[stroke=\#000] {
-      stroke: theme.$text1-color;
+      stroke: theme.$white;
     }
 
     *[fill=\#000] {
-      fill: theme.$text1-color;
+      fill: theme.$white;
     }
   }
 
@@ -91,7 +91,8 @@
 
 button:local(.more-menu-item-target) {
   background: transparent;
-  border: none; 
+  border: none;
+  color: theme.$white;
 }
 
 :local(.compact-button) {
