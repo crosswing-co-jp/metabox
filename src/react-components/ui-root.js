@@ -80,6 +80,7 @@ import { AudioPopoverContainer } from "./room/AudioPopoverContainer";
 import { ReactionPopoverContainer } from "./room/ReactionPopoverContainer";
 import { CameraButtonContainer } from "./room/CameraButtonContainer";
 import { AvatarButtonContainer } from "./room/AvatarButtonContainer";
+import { ToggleTpsButtonContainer } from "./room/ToggleTpsButtonContainer";
 import { SafariMicModal } from "./room/SafariMicModal";
 import { RoomSignInModalContainer } from "./auth/RoomSignInModalContainer";
 import { SignInStep } from "./auth/SignInModal";
@@ -1074,8 +1075,6 @@ class UIRoot extends Component {
 
     const streaming = this.state.isStreaming;
 
-    const showObjectList = enteredOrWatching;
-
     const streamer = getCurrentStreamer();
     const streamerName = streamer && streamer.displayName;
 
@@ -1565,6 +1564,7 @@ class UIRoot extends Component {
                         {this.props.hubChannel.can("spawn_and_move_media") && (
                           <AvatarButtonContainer mediaSearchStore={this.props.mediaSearchStore} />
                         )}
+                        <ToggleTpsButtonContainer store={this.props.store} scene={this.props.scene} />
                       </>
                     )}
                     {entered &&
