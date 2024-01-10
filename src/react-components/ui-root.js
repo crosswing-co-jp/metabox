@@ -90,6 +90,8 @@ import { RoomSettingsSidebarContainer } from "./room/RoomSettingsSidebarContaine
 import { AutoExitWarningModal, AutoExitReason } from "./room/AutoExitWarningModal";
 import { ExitReason } from "./room/ExitedRoomScreen";
 import { UserProfileSidebarContainer } from "./room/UserProfileSidebarContainer";
+import { OfficialSiteLinksButtonContainer } from "./room/OfficialSiteLinksButtonContainer";
+import { OfficialSiteLinksSidebarContainer } from "./room/OfficialSiteLinksSidebarContainer";
 import { CloseRoomModal } from "./room/CloseRoomModal";
 import { WebVRUnsupportedModal } from "./room/WebVRUnsupportedModal";
 import { TweetModalContainer } from "./room/TweetModalContainer";
@@ -177,6 +179,7 @@ class UIRoot extends Component {
     linkCode: null,
     linkCodeCancel: null,
     miniInviteActivated: false,
+    showOfficialSiteLinks: false,
 
     didConnectToNetworkedScene: false,
     noMoreLoadingUpdates: false,
@@ -1355,6 +1358,16 @@ class UIRoot extends Component {
                   <>
                     {!this.state.dialog && renderEntryFlow ? entryDialog : undefined}
                     {!this.props.selectedObject && <CompactMoreMenuButton />}
+                    {!this.state.showOfficialSiteLinks && (
+                      <OfficialSiteLinksButtonContainer
+                        onClick={() => this.setState({ showOfficialSiteLinks: true })}
+                      />
+                    )}
+                    {this.state.showOfficialSiteLinks && (
+                      <OfficialSiteLinksSidebarContainer
+                        onClose={() => this.setState({ showOfficialSiteLinks: false })}
+                      />
+                    )}
                     {(!this.props.selectedObject ||
                       (this.props.breakpoint !== "sm" && this.props.breakpoint !== "md")) && (
                       <ContentMenu>

@@ -641,5 +641,7 @@
   "webvr-unsupported-modal.message": "このブラウザではWebVRはサポートされていません。OculusまたはSteamVRで入力するには,Firefoxを使用してください。",
   "webvr-unsupported-modal.title": "VRに入る",
   "webvr-unsupported-modal.webvr-rocks-link": "実験的なVRをサポートするブラウザのリストについては,<a> WebVR Rocks </a>にアクセスしてください。",
-  "whats-new-page.title": "新着情報"
+  "whats-new-page.title": "新着情報",
+  "official-site-links.show-button": "メタぼっくす\n公式サイトへ",
+  "official-site-links.sidebar-title": "メタぼっくす 公式サイト"
 }
