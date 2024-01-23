@@ -14,10 +14,11 @@ import { MediaTile } from "../room/MediaTiles";
 import { PageContainer } from "../layout/PageContainer";
 import { scaledThumbnailUrlFor } from "../../utils/media-url-utils";
 import { Column } from "../layout/Column";
-import { Button } from "../input/Button";
 import { Container } from "../layout/Container";
 import { SocialBar } from "../home/SocialBar";
 import { SignInButton } from "./SignInButton";
+import { DemoExperienceButton } from "./DemoExperienceButton";
+import { HaveCodeButton } from "./HaveCodeButton";
 import { AppLogo } from "../misc/AppLogo";
 import { isHmc } from "../../utils/isHmc";
 import maskEmail from "../../utils/mask-email";
@@ -55,7 +56,7 @@ export function HomePage() {
   const email = auth.email;
   return (
     <PageContainer className={styles.homePage}>
-      <Container>
+      <Container className={styles.container}>
         <div className={styles.hero}>
           {auth.isSignedIn ? (
             <div className={styles.signInContainer}>
@@ -78,10 +79,13 @@ export function HomePage() {
           </div>
           <div className={styles.appInfo}>
             <div className={styles.appDescription}>{configs.translation("app-description")}</div>
-            {canCreateRooms && <CreateRoomButton />}
+            <div className={styles.btnArea}>
+              {canCreateRooms && <CreateRoomButton />}
+              {<DemoExperienceButton />}
+            </div>
             <PWAButton />
           </div>
-          <div className={styles.heroImageContainer}>
+          <div>
             <img
               alt={intl.formatMessage(
                 {
@@ -138,10 +142,10 @@ export function HomePage() {
       )}
       {sortedPublicRooms.length > 0 && (
         <Container className={styles.roomsContainer}>
-          <h3 className={styles.roomsHeading}>
-            <FormattedMessage id="home-page.public--rooms" defaultMessage="Public Rooms" />
-          </h3>
-          <Column grow padding className={styles.rooms}>
+          <Column grow className={styles.rooms}>
+            <h3 id="demo-experience" className={styles.roomsHeading}>
+              <FormattedMessage id="home-page.demo-experience" defaultMessage="Demo Experience" />
+            </h3>
             <MediaGrid center>
               {sortedPublicRooms.map(room => {
                 return (
@@ -182,9 +186,7 @@ export function HomePage() {
       )}
       <Container>
         <Column center grow>
-          <Button thin preset="landing" as="a" href="/link">
-            <FormattedMessage id="home-page.have-code" defaultMessage="Have a room code?" />
-          </Button>
+          <HaveCodeButton />
         </Column>
       </Container>
       {isHmc() ? (
