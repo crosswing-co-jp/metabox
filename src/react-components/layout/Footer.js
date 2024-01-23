@@ -4,6 +4,7 @@ import { FormattedMessage } from "react-intl";
 import styles from "./Footer.scss";
 import discordLogoUrl from "../../assets/images/discord-logo-small.png";
 import { Container } from "./Container";
+import classNames from "classnames";
 
 export function Footer({
   hidePoweredBy,
@@ -29,7 +30,7 @@ export function Footer({
               values={{
                 // eslint-disable-next-line react/display-name
                 a: chunks => (
-                  <a className={styles.link} href="https://hubs.mozilla.com/cloud">
+                  <a className={classNames(styles.link, styles.poweredByLink)} href="https://hubs.mozilla.com/cloud">
                     {chunks}
                   </a>
                 )
@@ -90,13 +91,16 @@ export function Footer({
             )}
             {showCompanyLogo && (
               <li>
-                <img
-                  className={styles.companyLogo}
-                  src={companyLogoUrl}
-                  alt={<FormattedMessage id="footer.logo-alt" defaultMessage="Logo" />}
-                />
+                <a href="https://www.hope21.co.jp/" target="_blank" rel="noopener noreferrer">
+                  <img
+                    className={styles.companyLogo}
+                    src={companyLogoUrl}
+                    alt={<FormattedMessage id="footer.logo-alt" defaultMessage="Logo" />}
+                  />
+                </a>
               </li>
             )}
+            <li className={styles.subsidyText}>令和2年度第3次補正 事業再構築補助金により作成</li>
           </ul>
         </nav>
       </Container>

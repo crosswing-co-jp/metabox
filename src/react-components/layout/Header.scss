@@ -2,6 +2,7 @@
 
 header {
   display: block;
+  background-color: #0F1935;
   
 
   @media(min-width: theme.$breakpoint-lg) {
@@ -76,14 +77,20 @@ header {
 
 :local(.home-link) {
   display: inline-block;
-  width: 124px;
-  height: 83px;
+  width: 12.5rem;
+  height: 2.625rem;
+
   @media(min-width: theme.$breakpoint-lg) {
    img {
     height: 32px;
     }
   }
 }
+
+:local(.admin) {
+  color: theme.$white;
+}
+
 :local(.sign-in) {
   display: none;
   flex-direction: column;
@@ -91,11 +98,6 @@ header {
   padding-top: 20px;
   font-size: theme.$font-size-md;
   font-weight: theme.$font-weight-bold;
-  
-  a {
-    margin-left: 8px;
-    color: theme.$link-color;
-  }
 
   @media(min-width: theme.$breakpoint-lg) {
     display: flex;
@@ -104,6 +106,10 @@ header {
     flex: 1;
     padding-top: 0;
   }
+}
+
+:local(.signed-in-message) {
+  color: theme.$white;
 }
 
 :local(.nav-container) {
