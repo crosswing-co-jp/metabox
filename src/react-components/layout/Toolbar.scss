@@ -51,10 +51,7 @@
   position: absolute;
   height: 96px;
   width: 100%;
-
-  @media (min-width: theme.$breakpoint-lg) {
-    overflow: hidden;
-  }
+  overflow: hidden;
 }
 
 // n is number of stars required
