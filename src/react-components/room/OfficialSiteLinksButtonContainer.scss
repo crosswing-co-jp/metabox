@@ -4,18 +4,24 @@
   background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
   color: theme.$white;
   position: absolute;
-  right: 10px;
-  top: 65px;
   width: 80px;
   height: 80px;
   border-radius: 100px;
   border: 1px solid var(--border1-color);
-  
+
+  @media(min-width: theme.$breakpoint-md) {
+    width: 100px;
+    height: 100px;
+  }
+
+  @media(max-width: theme.$breakpoint-lg) {
+    right: 10px;
+    top: 65px;
+  }
+
   @media(min-width: theme.$breakpoint-lg) {
     left: 35px;
     bottom: 35px;
-    width: 100px;
-    height: 100px;
   }
 
   svg {
