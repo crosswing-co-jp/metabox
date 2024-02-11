@@ -76,6 +76,7 @@ export function RoomSettingsSidebar({
           ref={register}
           error={errors.name}
           fullWidth
+          labelClassName={styles.label}
         />
         <TextAreaInputField
           name="description"
@@ -89,6 +90,7 @@ export function RoomSettingsSidebar({
           ref={register}
           error={errors.description}
           fullWidth
+          labelClassName={styles.label}
         />
         <NumericInputField
           name="room_size"
@@ -103,10 +105,12 @@ export function RoomSettingsSidebar({
           ref={register}
           error={errors.room_size}
           fullWidth
+          labelClassName={styles.label}
         />
         <RadioInputField
           label={<FormattedMessage id="room-settings-sidebar.room-access" defaultMessage="Room Access" />}
           fullWidth
+          labelClassName={styles.label}
         >
           <RadioInputOption
             name="entry_mode"
@@ -136,12 +140,18 @@ export function RoomSettingsSidebar({
           />
         </RadioInputField>
         {entryMode === "invite" && (
-          <InviteLinkInputField fetchingInvite={fetchingInvite} inviteUrl={inviteUrl} onRevokeInvite={onRevokeInvite} />
+          <InviteLinkInputField
+            fetchingInvite={fetchingInvite}
+            inviteUrl={inviteUrl}
+            onRevokeInvite={onRevokeInvite}
+            labelClassName={styles.label}
+          />
         )}
         {showPublicRoomSetting && (
           <ToggleInput
             name="allow_promotion"
             label={<FormattedMessage id="room-settings-sidebar.access-public" defaultMessage="Public" />}
+            labelClassName={styles.toggleInputLabel}
             description={
               <FormattedMessage
                 id="room-settings-sidebar.access-public-description"
@@ -154,6 +164,7 @@ export function RoomSettingsSidebar({
         <InputField
           label={<FormattedMessage id="room-settings-sidebar.permissions" defaultMessage="Room Member Permissions" />}
           fullWidth
+          labelClassName={styles.label}
         >
           <div className={styles.roomPermissions}>
             <ToggleInput
@@ -164,18 +175,21 @@ export function RoomSettingsSidebar({
                   defaultMessage="Create and move objects"
                 />
               }
+              labelClassName={styles.toggleInputLabel}
               ref={register}
             />
             <div className={styles.permissionsGroup}>
               <ToggleInput
                 name="member_permissions.spawn_camera"
                 label={<FormattedMessage id="room-settings-sidebar.spawn-camera" defaultMessage="Create cameras" />}
+                labelClassName={styles.toggleInputLabel}
                 ref={register}
                 disabled={!spawnAndMoveMedia}
               />
               <ToggleInput
                 name="member_permissions.pin_objects"
                 label={<FormattedMessage id="room-settings-sidebar.pin-objects" defaultMessage="Pin objects" />}
+                labelClassName={styles.toggleInputLabel}
                 ref={register}
                 disabled={!spawnAndMoveMedia}
               />
@@ -183,16 +197,19 @@ export function RoomSettingsSidebar({
             <ToggleInput
               name="member_permissions.spawn_drawing"
               label={<FormattedMessage id="room-settings-sidebar.spawn-drawing" defaultMessage="Create drawings" />}
+              labelClassName={styles.toggleInputLabel}
               ref={register}
             />
             <ToggleInput
               name="member_permissions.spawn_emoji"
               label={<FormattedMessage id="room-settings-sidebar.spawn-emoji" defaultMessage="Create emoji" />}
+              labelClassName={styles.toggleInputLabel}
               ref={register}
             />
             <ToggleInput
               name="member_permissions.fly"
               label={<FormattedMessage id="room-settings-sidebar.fly" defaultMessage="Allow flying" />}
+              labelClassName={styles.toggleInputLabel}
               ref={register}
             />
           </div>

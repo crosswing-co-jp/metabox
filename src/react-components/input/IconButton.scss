@@ -29,29 +29,35 @@
   }
 
   &:hover {
-    color: theme.$primary-color-hover;
+    color: #e15f6d;
 
     svg {
       *[stroke=\#000] {
-        stroke: theme.$primary-color-hover;
+        stroke: #e15f6d;
       }
   
       *[fill=\#000] {
-        fill: theme.$primary-color-hover;
+        fill: #e15f6d;
       }
     }
   }
 
   &:active {
-    color: theme.$primary-color-pressed;
+    color: #e15f6d;
+    filter: brightness(1.2);
+    transition: filter .2s ease-out;
 
     svg {
       *[stroke=\#000] {
-        stroke: theme.$primary-color-pressed;
+        stroke: #e15f6d;
+        filter: brightness(1.2);
+        transition: filter .2s ease-out;
       }
   
       *[fill=\#000] {
-        fill: theme.$primary-color-pressed;
+        fill: #e15f6d;
+        filter: brightness(1.2);
+        transition: filter .2s ease-out;
       }
     }
   }

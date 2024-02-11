@@ -4,8 +4,11 @@
   display: flex;
   justify-content: center;
   flex: 1;
+  background-size: cover;
+  background-image: url(../images/bg_space.jpg);
 
   h1 {
+    color: theme.$white;
     font-size: theme.$font-size-xl;
     text-align: center;
     margin: 15px 0;

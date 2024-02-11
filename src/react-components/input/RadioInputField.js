@@ -4,9 +4,16 @@ import { InputField } from "./InputField";
 import { RadioInputContainer, RadioInputOption as _RadioInputOption } from "./RadioInput";
 
 export const RadioInputField = memo(
-  ({ className, error, description, inputClassName, label, children, fullWidth, ...rest }) => {
+  ({ className, error, description, labelClassName, inputClassName, label, children, fullWidth, ...rest }) => {
     return (
-      <InputField className={className} label={label} error={error} description={description} fullWidth={fullWidth}>
+      <InputField
+        className={className}
+        label={label}
+        labelClassName={labelClassName}
+        error={error}
+        description={description}
+        fullWidth={fullWidth}
+      >
         <RadioInputContainer className={inputClassName} {...rest}>
           {children}
         </RadioInputContainer>

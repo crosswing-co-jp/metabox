@@ -27,5 +27,6 @@ ToggleInput.propTypes = {
   description: PropTypes.node,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
-  className: PropTypes.string
+  className: PropTypes.string,
+  labelClassName: PropTypes.string
 };

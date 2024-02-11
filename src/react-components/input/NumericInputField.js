@@ -5,7 +5,7 @@ import { useId } from "./useId";
 import { NumericInput } from "./NumericInput";
 
 export const NumericInputField = memo(
-  forwardRef(({ className, error, description, inputClassName, label, fullWidth, ...rest }, ref) => {
+  forwardRef(({ className, error, description, labelClassName, inputClassName, label, fullWidth, ...rest }, ref) => {
     const id = useId();
     const labelId = useId();
 
@@ -15,6 +15,7 @@ export const NumericInputField = memo(
         htmlFor={id}
         className={className}
         label={label}
+        labelClassName={labelClassName}
         error={error}
         description={description}
         fullWidth={fullWidth}
