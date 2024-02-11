@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { OfficialSiteLinksSidebar } from "./OfficialSiteLinksSidebar";
 
-export function OfficialSiteLinksSidebarContainer({ onClose }) {
+export function OfficialSiteLinksSidebarContainer({ onClose, appName }) {
   const links = [
     { id: 1, name: "トップ", url: "https://metabox.s-oyama.me/" },
     { id: 2, name: "メタぼっくすとは", url: "https://metabox.s-oyama.me/about/" },
@@ -16,9 +16,10 @@ export function OfficialSiteLinksSidebarContainer({ onClose }) {
     { id: 10, name: "お問い合わせ", url: "https://metabox.s-oyama.me/contact/" }
   ];
 
-  return <OfficialSiteLinksSidebar links={links} onClose={onClose} />;
+  return <OfficialSiteLinksSidebar links={links} onClose={onClose} appName={appName} />;
 }
 
 OfficialSiteLinksSidebarContainer.propTypes = {
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  appName: PropTypes.string
 };
