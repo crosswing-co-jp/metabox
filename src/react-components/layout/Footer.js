@@ -100,7 +100,6 @@ export function Footer({
                 </a>
               </li>
             )}
-            <li className={styles.subsidyText}>令和2年度第3次補正 事業再構築補助金により作成</li>
           </ul>
         </nav>
       </Container>
