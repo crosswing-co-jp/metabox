@@ -26,12 +26,18 @@ OfficialSiteLinksSidebarItem.propTypes = {
   })
 };
 
-export function OfficialSiteLinksSidebar({ links, onClose }) {
+export function OfficialSiteLinksSidebar({ links, onClose, appName }) {
   const listRef = useRef();
 
   return (
     <Sidebar
-      title={<FormattedMessage id="official-site-links.sidebar-title" defaultMessage="MetaBox official website" />}
+      title={
+        <FormattedMessage
+          id="official-site-links.sidebar-title"
+          defaultMessage="{appName} official website"
+          values={{ appName }}
+        />
+      }
       beforeTitle={<CloseButton onClick={onClose} />}
       className={styles.officialSiteLinksSidebar}
     >
@@ -48,5 +54,6 @@ OfficialSiteLinksSidebar.propTypes = {
       url: PropTypes.string.isRequired
     })
   ).isRequired,
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  appName: PropTypes.string
 };

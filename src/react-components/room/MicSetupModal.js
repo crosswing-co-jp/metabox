@@ -33,6 +33,7 @@ export function MicSetupModal({
   isAudioOutputSelectAvailable,
   micLevelBar,
   speakerLevelBar,
+  appName,
   ...rest
 }) {
   const iconStyle = isMicrophoneEnabled ? styles.iconEnabled : styles.iconDisabled;
@@ -47,7 +48,8 @@ export function MicSetupModal({
         <p>
           <FormattedMessage
             id="mic-setup-modal.check-mic"
-            defaultMessage="Check your microphone and audio before entering."
+            defaultMessage="In {appName}, we have disabled the microphone feature to prevent disruptive behavior. Please enter the room with your microphone muted."
+            values={{ appName }}
           />
         </p>
         <div className={styles.audioCheckContainer}>
@@ -187,7 +189,8 @@ MicSetupModal.propTypes = {
   onBack: PropTypes.func,
   permissionStatus: PropTypes.string,
   isAudioInputSelectAvailable: PropTypes.bool,
-  isAudioOutputSelectAvailable: PropTypes.bool
+  isAudioOutputSelectAvailable: PropTypes.bool,
+  appName: PropTypes.string
 };
 
 MicSetupModal.defaultProps = {
