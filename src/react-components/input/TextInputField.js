@@ -5,7 +5,7 @@ import { TextInput } from "./TextInput";
 import { useId } from "./useId";
 
 export const TextInputField = memo(
-  forwardRef(({ className, error, description, inputClassName, label, fullWidth, ...rest }, ref) => {
+  forwardRef(({ className, error, description, inputClassName, label, labelClassName, fullWidth, ...rest }, ref) => {
     const id = useId();
     const labelId = useId();
 
@@ -15,6 +15,7 @@ export const TextInputField = memo(
         htmlFor={id}
         className={className}
         label={label}
+        labelClassName={labelClassName}
         error={error}
         description={description}
         fullWidth={fullWidth}

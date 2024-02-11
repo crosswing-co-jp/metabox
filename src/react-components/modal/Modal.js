@@ -9,8 +9,8 @@ export function Modal({
   beforeTitle,
   afterTitle,
   children,
-  contentClassName,
   className,
+  contentClassName,
   disableFullscreen
 }) {
   return (

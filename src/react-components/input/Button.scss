@@ -55,79 +55,73 @@
 }
 
 :local(.primary) {
-  color: theme.$text5-color;
-  background-color: theme.$primary-color;
+  background-color: #e15f6d;
+  border-radius: 3.75rem;
+  border: none;
+  color: theme.$white;
 
   svg {
     *[stroke=\#000] {
-      stroke: theme.$text5-color;
+      stroke: theme.$white;
     }
 
     *[fill=\#000] {
-      fill: theme.$text5-color;
+      fill: theme.$white;
     }
   }
 
   &:hover {
-    color: theme.$text5-color-hover;
-    background-color: theme.$primary-color-hover;
-  }
-
-  &:active {
-    color: theme.$text5-color-pressed;
-    background-color: theme.$primary-color-pressed;
+    background-color: #e15f6d;
+    color: theme.$white;
+    filter: brightness(1.2);
+    transition: filter .2s ease-out;
   }
 }
 
 :local(.accept) {
-  color: theme.$text5-color;
-  background-color: theme.$accept-color;
-  border: 2px solid theme.$accept-border-color;
-  
+  background-color: #e15f6d;
+  border-radius: 3.75rem;
+  border: none;
+  color: theme.$white;
+
   svg {
     *[stroke=\#000] {
-      stroke: theme.$text5-color;
+      stroke: theme.$white;
     }
 
     *[fill=\#000] {
-      fill: theme.$text5-color;
+      fill: theme.$white;
     }
   }
 
   &:hover {
-    color: theme.$text5-color-hover;
-    background-color: theme.$accept-color-hover;
-    border: 2px solid theme.$accept-border-color;
-  }
-
-  &:active {
-    color: theme.$text5-color-pressed;
-    background-color: theme.$accept-color-pressed;
+    background-color: #e15f6d;
+    color: theme.$white;
+    filter: brightness(1.2);
+    transition: filter .2s ease-out;
   }
 }
 
 :local(.cancel) {
-  color: theme.$text5-color;
-  background-color: theme.$cancel-color;
+  background-color: #FAF4EF;
+  color: #0F1935;
+  border-radius: 3.75rem;
+  
+  &:hover {
+    background-color: #FAF4EF;
+    color: #0F1935;
+    filter: brightness(1.2);
+    transition: filter .2s ease-out;
+  }
 
   svg {
     *[stroke=\#000] {
-      stroke: theme.$text5-color;
+      stroke: #0F1935;
     }
 
     *[fill=\#000] {
-      fill: theme.$text5-color;
+      fill: #0F1935;
     }
-  }
-
-  &:hover {
-    color: theme.$text5-color-hover;
-    background-color: theme.$cancel-color-hover;
-  }
-
-  &:active {
-    color: theme.$text5-color-pressed;
-    background-color: theme.$cancel-color-pressed;
   }
 }
 
