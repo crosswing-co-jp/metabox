@@ -103,6 +103,8 @@ import { TERMS, PRIVACY } from "../constants";
 
 const avatarEditorDebug = qsTruthy("avatarEditorDebug");
 
+const appName = configs.translation("app-name");
+
 const IN_ROOM_MODAL_ROUTER_PATHS = ["/media"];
 const IN_ROOM_MODAL_QUERY_VARS = ["media_source"];
 
@@ -891,6 +893,7 @@ class UIRoot extends Component {
         scene={this.props.scene}
         onEnterRoom={this.onAudioReadyButton}
         onBack={() => this.props.history.goBack()}
+        appName={appName}
       />
     );
   };
@@ -1361,11 +1364,13 @@ class UIRoot extends Component {
                     {!this.state.showOfficialSiteLinks && (
                       <OfficialSiteLinksButtonContainer
                         onClick={() => this.setState({ showOfficialSiteLinks: true })}
+                        appName={appName}
                       />
                     )}
                     {this.state.showOfficialSiteLinks && (
                       <OfficialSiteLinksSidebarContainer
                         onClose={() => this.setState({ showOfficialSiteLinks: false })}
+                        appName={appName}
                       />
                     )}
                     {(!this.props.selectedObject ||

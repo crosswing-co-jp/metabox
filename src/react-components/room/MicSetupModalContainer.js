@@ -12,7 +12,7 @@ import MediaDevicesManager from "../../utils/media-devices-manager";
 import { VolumeLevelBar } from "../misc/VolumeLevelBar";
 import styles from "./MicSetupModal.scss";
 
-export function MicSetupModalContainer({ scene, ...rest }) {
+export function MicSetupModalContainer({ scene, appName, ...rest }) {
   const { isMicEnabled, permissionStatus } = useMicrophoneStatus(scene);
   const { micDeviceChanged, micDevices } = useMicrophone(scene);
   const { speakerDeviceChanged, speakerDevices } = useSpeakers();
@@ -43,11 +43,13 @@ export function MicSetupModalContainer({ scene, ...rest }) {
       onChangeMicrophoneMuted={onChangeMicrophoneMuted}
       isAudioInputSelectAvailable={MediaDevicesManager.isAudioInputSelectEnabled}
       isAudioOutputSelectAvailable={MediaDevicesManager.isAudioOutputSelectEnabled}
+      appName={appName}
       {...rest}
     />
   );
 }
 
 MicSetupModalContainer.propTypes = {
-  scene: PropTypes.object.isRequired
+  scene: PropTypes.object.isRequired,
+  appName: PropTypes.string
 };
