@@ -36,6 +36,7 @@ export const AudioPopoverContent = ({
         <SelectInputField
           className={styles.selectionInput}
           buttonClassName={styles.selectionInput}
+          dropdownClassName={styles.dropdown}
           onChange={onChangeMicrophone}
           {...microphoneOptions}
         />
@@ -64,6 +65,7 @@ export const AudioPopoverContent = ({
         <SelectInputField
           className={styles.selectionInput}
           buttonClassName={styles.selectionInput}
+          dropdownClassName={styles.dropdown}
           onChange={onChangeSpeaker}
           {...speakerOptions}
         />
