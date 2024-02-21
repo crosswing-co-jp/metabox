@@ -63,11 +63,7 @@ export const SCHEMA = {
       type: "object",
       additionalProperties: false,
       properties: {
-        displayName: {
-          type: "string",
-          pattern:
-            "^[\\p{Script=Han}\\p{Script=Hiragana}\\p{Script=Katakana}ー～　（）［］【】０-９A-Za-z0-9_~ -]{3,32}$"
-        },
+        displayName: { type: "string", pattern: "^[A-Za-z0-9_~ -]{3,32}$" },
         avatarId: { type: "string" },
         // personalAvatarId is obsolete, but we need it here for backwards compatibility.
         personalAvatarId: { type: "string" }
@@ -409,10 +405,6 @@ export default class Store extends EventTarget {
     // Cleanup unsupported properties
     if (!valid) {
       errors.forEach(error => {
-        // Ignore jsonschema error for displayName, as jsonschema validator don't enable 'unicode'
-        // flag for RegExp constructor before 1.2.9.
-        if (error.property === "instance.profile.displayName") return;
-
         console.error(`Removing invalid preference from store: ${error.message}`);
         delete error.instance[error.argument];
       });
