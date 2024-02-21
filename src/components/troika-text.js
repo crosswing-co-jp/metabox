@@ -3,7 +3,6 @@
 // by @jamesckane at Paradowski Creative (paradowski.com)
 
 import { Text } from "troika-three-text";
-import NotoSansUrl from "../assets/fonts/NotoSansJP-Regular.otf";
 
 // Mark this type of object so we can filter in from our shader patching
 Text.prototype.isTroikaText = true;
@@ -113,7 +112,7 @@ AFRAME.registerComponent("text", {
     mesh.depthOffset = data.depthOffset || 0;
     mesh.direction = data.direction;
     mesh.fillOpacity = data.fillOpacity;
-    mesh.font = data.fontUrl || NotoSansUrl;
+    mesh.font = data.fontUrl;
     mesh.fontSize = data.fontSize;
     mesh.letterSpacing = data.letterSpacing || 0;
     mesh.clipRect = data.clipRect;
