@@ -649,6 +649,6 @@
   "webvr-unsupported-modal.title": "VRに入る",
   "webvr-unsupported-modal.webvr-rocks-link": "実験的なVRをサポートするブラウザのリストについては,<a> WebVR Rocks </a>にアクセスしてください。",
   "whats-new-page.title": "新着情報",
-  "official-site-links.show-button": "{appName}\n公式サイトへ",
-  "official-site-links.sidebar-title": "{appName} 公式サイト"
+  "official-site-links.show-button": "{appName}\n関連サイトへ",
+  "official-site-links.sidebar-title": "{appName} 関連サイト"
 }
